@@ -20,7 +20,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven { url 'https://dl.bintray.com/08carmelo/maven' }
+//        maven { url 'https://dl.bintray.com/08carmelo/maven' }
     }
 }
 
