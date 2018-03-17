@@ -20,5 +20,5 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':library')
+    compile 'com.carmelo:keeplive:1.0.0'
 }

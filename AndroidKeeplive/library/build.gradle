@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 23
@@ -22,6 +23,31 @@ android {
         }
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+    tasks.withType(Javadoc) {
+        options{ encoding "UTF-8"
+            charSet 'UTF-8'
+            links "http://docs.oracle.com/javase/7/docs/api"
+        }
+    }
+}
+
+publish {
+    userOrg = '08carmelo'      //bintray注册的用户名
+    groupId = 'com.carmelo'         //compile引用时的第1部分groupId
+    artifactId = 'keeplive'     //compile引用时的第2部分项目名
+    publishVersion = '1.0.0'    //compile引用时的第3部分版本号
+    desc = 'Improve the android service process priority '
+    website = 'https://github.com/08carmelo/android-keeplive'
 }
 
 dependencies {
